@@ -6,7 +6,9 @@
 	],
 	"settings": {
 		"files.associations": {
-			"*.tcc": "cpp"
+			"*.tcc": "cpp",
+			"mutex": "cpp",
+			"string": "cpp"
 		}
 	}
 }
