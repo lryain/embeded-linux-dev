@@ -1,0 +1,1 @@
+/usr/bin/c++ -w -O2 -g -ggdb -w CMakeFiles/serialNetTools_test.dir/main_test.cpp.o -o serialNetTools_test 
