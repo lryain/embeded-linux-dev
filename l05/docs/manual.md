@@ -8,6 +8,14 @@ quit
 
 手册
 
+##
+
+配置git
+git config --global http.proxy http://192.168.3.8:7890
+git config --global https.proxy http://192.168.3.8:7890
+git config --global user.name "lryain"
+git config --global user.email "47129927@qq.com"
+
 ## 封装日志
 
 安装glog
