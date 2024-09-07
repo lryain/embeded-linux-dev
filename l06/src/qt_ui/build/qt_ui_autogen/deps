@@ -1,0 +1,3 @@
+qt_ui_autogen/timestamp: \
+	/home/lryain/dev/embeded-linux-dev/l06/src/qt_ui/mainwindow.ui \
+	/usr/bin/cmake

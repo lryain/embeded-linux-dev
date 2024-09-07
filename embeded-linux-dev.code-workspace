@@ -1,14 +1,25 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "l06"
+		},
+		{
+			"path": "../Embedded-and-algorithm/006_lesson"
 		}
 	],
 	"settings": {
 		"files.associations": {
+			"string": "cpp",
+			"ranges": "cpp",
 			"*.tcc": "cpp",
-			"mutex": "cpp",
-			"string": "cpp"
+			"unordered_map": "cpp",
+			"fstream": "cpp",
+			"istream": "cpp",
+			"numeric": "cpp",
+			"ostream": "cpp",
+			"sstream": "cpp",
+			"qthread": "cpp",
+			"qcoreapplication": "cpp"
 		}
 	}
 }
