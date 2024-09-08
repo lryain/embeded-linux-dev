@@ -15,3 +15,7 @@ ros1安装
 git checkout -b ros1
 git push origin ros1:ros1
 
+# 提交到ros1 分支
+
+git push --set-upstream origin ros1
+```
