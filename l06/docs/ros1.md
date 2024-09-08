@@ -16,6 +16,9 @@ git checkout -b ros1
 git push origin ros1:ros1
 
 # 提交到ros1 分支
-
+# 首次提交
 git push --set-upstream origin ros1
+# 后面常规操作
+git push origin
+
 ```
