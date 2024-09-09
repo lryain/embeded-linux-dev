@@ -26,7 +26,11 @@ git push origin
 
 ```
 
+<<<<<<< HEAD
 ## vscode c++path 添加
+=======
+## vscode c++path 添加
+>>>>>>> 718a73adcc4efd663fe5491e1e0c46be3b841295
 
 "/opt/ros/noetic/include/**",
 "/opt/ros/noetic/include/*",
