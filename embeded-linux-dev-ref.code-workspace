@@ -1,9 +1,6 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
 			"path": "l07"
 		}
 	],
@@ -17,7 +14,8 @@
 			"istream": "cpp",
 			"numeric": "cpp",
 			"ostream": "cpp",
-			"sstream": "cpp"
+			"sstream": "cpp",
+			"set": "cpp"
 		}
 	}
 }

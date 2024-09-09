@@ -18,86 +18,25 @@ git config --global user.email "47129927@qq.com"
 
 ## 封装日志
 
-安装glog
-git clone --depth=1 https://github.com/google/glog
 
-```s
-cd glog
-mkdir build && cd build
-cmake ..
-make
-sudo make install
-sudo ldconfig`
-```
+## ros 测试
 
-#include <glog/logging.h>
+roscore
+rostopic pub /str_msg std_msgs/String "data: 'hello-ros'"
+rostopic echo /str_msg
 
-## Q&A
+## 在qt_ui模块导入日志模块
 
-Q: /usr/bin/ld: libqt_ui.so: undefined reference to `ros::shutdown()'
+在CMakeLists.txt文件中添加
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../common)
+# 需要链接的库
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets ${catkin_LIBRARIES} common)
 
-A: 添加ROS链接库即可
-
-
-Q: Failed to find required Qt component "Widgets".
-
-Qt needs some package to be installed to work to install dependencies type the following code and get working
-
-sudo apt-get install build-essential libgl1-mesa-dev
-
-## 编译运行命令
-
-rm -rf * && cmake .
-make
-
-cmake 需要手动配置两个变量
-
-set(QT_PREFIX_PATH "~/Qt/6.7.2/gcc_64")
-set(CMAKE_PREFIX_PATH "${QT_PREFIX_PATH}/lib/cmake")
-
-
-## 安装依赖
-
-sudo apt install cmake
-
-## 06
-
-修复一个bug，导致找不到qt生成的头文件
-# Header files
-set(CMAKE_INCLUDE_CURRENT_DIR_ON) -> set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-## 安装ros2
-
-git clone https://github.com/fishros/install
-sudo nano ~/.bashrc
-在最后一行添加：
-source /opt/ros/jazzy/setup.bash
-
-ros2 头文件
-/opt/ros/jazzy/include
-
-## 添加ros依赖
-
-但是找不到ros包
-Q: Could not find a package configuration file provided by "catkin" with any
-  of the following names:
+报错：
+Q:/usr/bin/ld: 找不到 -lcommon
 A:
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_PREFIX_PATH})
+# 指定common库的路径，然后根据这个路径定义一个链接库 给目标链接时使用
+find_library(MY_COMMON_LIBRARY NAMES common PATHS /home/lryain/dev/embeded-linux-dev/l07/src/common/build)
+link_directories(${MY_COMMON_LIBRARY})
 
-# Verify
-message(STATUS "CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}")
-
-## 报错
-
-1.找不到rclcpp/rclcpp.h
-
-在 add_executable 之后添加 ament_target_dependencies
-add_executable(${PROJECT_NAME}_test main.cpp)
-
-ament_target_dependencies(${PROJECT_NAME} rclcpp std_msgs)
-
-2. /usr/bin/ld: libqt_ui.so: undefined reference to `RosNode::run()'
-定义 void RosNode::run() 方法即可！
-
-## Ros1 向 Ros2 迁徙
-
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets ${catkin_LIBRARIES} ${MY_COMMON_LIBRARY})

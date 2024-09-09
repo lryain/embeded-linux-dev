@@ -5,6 +5,8 @@
 #include <QString>
 #include <QDebug>
 #include "rosNode.h"
+#include "common.h"
+#include "myLog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,5 +33,7 @@ signals:
 private:
     Ui::MainWindow *ui_;
     RosNode rosNode_;
+    Common common_log_;
+    MyLog *myLog_;
 };
 #endif // MAINWINDOW_H

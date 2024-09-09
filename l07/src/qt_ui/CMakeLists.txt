@@ -14,14 +14,15 @@ set(CMAKE_CXX_FLAGS "-w")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -ggdb ${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g -ggdb ${CMAKE_CXX_FLAGS}")
 
-# set(ROS2_INCLUDE_PATH "/opt/ros/jazzy/include")
-# set(QT_PREFIX_PATH "~/Qt/6.7.2/gcc_64")
-# set(CMAKE_PREFIX_PATH "${QT_PREFIX_PATH}/lib/cmake")
-# set(CMAKE_AUTOUIC ON)
-
 # Header files
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../common)
+
+# common库 /home/lryain/dev/embeded-linux-dev/l07/src/common/build
+# 指定common库的路径，然后根据这个路径定义一个链接库 给目标链接时使用
+find_library(MY_COMMON_LIBRARY NAMES common PATHS ${CMAKE_CURRENT_SOURCE_DIR}/../common/build)
+link_directories(${MY_COMMON_LIBRARY})
 
 # 导入QT5库
 find_package(Qt5 REQUIRED COMPONENTS Widgets Core)
@@ -57,11 +58,12 @@ QT5_WRAP_CPP(QT_MOC_HPP ${QT_MOC}) #.h 文件（包含Qt对象的头文件）自
 add_library(${PROJECT_NAME} SHARED  ${QT_SOURCES} 
                                     ${QT_RESOURCES_CPP} 
                                     ${QT_FORMS_HPP} 
-                                    ${QT_MOC_HPP}
-                                )
+                                    ${QT_MOC_HPP})
+                                    
+add_definitions(-DGLOG_USE_GLOG_EXPORT)
 
 # 需要链接的库
-target_link_libraries(${PROJECT_NAME} Qt5::Widgets ${catkin_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets ${catkin_LIBRARIES} ${MY_COMMON_LIBRARY})
 
 # 可执行文件，不适用库
 add_executable(${PROJECT_NAME}_test main.cpp)

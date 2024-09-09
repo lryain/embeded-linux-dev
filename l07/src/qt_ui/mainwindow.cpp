@@ -17,17 +17,23 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
     QObject::connect(this, &MainWindow::signal_rosPub, &rosNode_, &RosNode::slot_pubStrMsg);
     // 将ros收到的消息绑定到QT窗口
     QObject::connect(&rosNode_, &RosNode::signal_strMsg, this, &MainWindow::slot_send_textEdit);
+
+    // 日志
+    std::string log_path = common_log_.get_log_path();
+    myLog_ = new MyLog(log_path, "mainWindow");
+    LOG(INFO)<<"mainWindow --> Log Hello World!";
 }
 
 MainWindow::~MainWindow()
 {
     delete ui_;
+    delete myLog_;
 }
 
 void MainWindow::slot_btn_send(){
     QString send_msg = ui_->lineEdit_input->text();
     qDebug() << send_msg;
-    // emit signal_send(send_msg);
+    emit signal_send(send_msg);
     emit signal_rosPub(send_msg);
     ui_->lineEdit_input->clear();
 }
