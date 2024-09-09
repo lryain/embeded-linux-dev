@@ -4,10 +4,10 @@
             "name": "linux-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/ros/jazzy/include/**",
-                "/opt/ros/jazzy/include/*",
-                "~/Qt/6.7.2/gcc_64/include/**",
-                "~/Qt/6.7.2/gcc_64/include/*"
+                "/opt/ros/noetic/include/**",
+                "/opt/ros/noetic/include/*",
+                "~/Qt/5.15.1/gcc_64/include/**",
+                "~/Qt/5.15.1/gcc_64/include/*"
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "${default}",

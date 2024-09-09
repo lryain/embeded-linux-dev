@@ -23,3 +23,8 @@ git push --set-upstream origin ros1
 git push origin
 
 ```
+
+## vscode c++path添加
+
+"/opt/ros/noetic/include/**",
+"/opt/ros/noetic/include/*",

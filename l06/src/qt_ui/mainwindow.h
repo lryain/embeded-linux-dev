@@ -26,6 +26,7 @@ public slots:
 
 signals:
     void signal_send(const QString&);
+    void signal_rosPub(const QString&);
 
 private:
     Ui::MainWindow *ui_;

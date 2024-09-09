@@ -1,7 +1,12 @@
 -I/home/lryain/dev/embeded-linux-dev/l06/src/qt_ui
--I/opt/ros/jazzy/include/std_msgs
+-I/opt/ros/noetic/include
+-I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp
+-I/usr/include
 -I/home/lryain/dev/embeded-linux-dev/l06/src/qt_ui
 -I/home/lryain/dev/embeded-linux-dev/l06/src/qt_ui/build
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="qt_ui"
+-DROSCONSOLE_BACKEND_LOG4CXX
 -o
 /home/lryain/dev/embeded-linux-dev/l06/src/qt_ui/build/moc_mainwindow.cpp
 /home/lryain/dev/embeded-linux-dev/l06/src/qt_ui/mainwindow.h

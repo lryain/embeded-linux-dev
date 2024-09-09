@@ -11,10 +11,11 @@ CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
 
-l05/src/SerialNetTools/build
-l05/src/qt_ui/build
-l05/src/common/build
-l05/src/common/logs
+l0*/src/SerialNetTools/build
+l0*/src/qt_ui/build
+l0*/src/common/build
+l0*/src/common/logs
+
 # C++ objects and libs
 *.slo
 *.lo

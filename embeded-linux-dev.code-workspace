@@ -1,22 +1,8 @@
 {
 	"folders": [
 		{
-			"path": "l06"
+			"path": "."
 		}
 	],
-	"settings": {
-		"files.associations": {
-			"string": "cpp",
-			"ranges": "cpp",
-			"*.tcc": "cpp",
-			"unordered_map": "cpp",
-			"fstream": "cpp",
-			"istream": "cpp",
-			"numeric": "cpp",
-			"ostream": "cpp",
-			"sstream": "cpp",
-			"qthread": "cpp",
-			"qcoreapplication": "cpp"
-		}
-	}
+	"settings": {}
 }

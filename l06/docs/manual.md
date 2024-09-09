@@ -32,33 +32,12 @@ sudo ldconfig`
 
 #include <glog/logging.h>
 
-## 安装QT6
-
-## qt依赖
-
-sudo apt update
-sudo apt install libxcb-cursor0
-sudo apt install gcc g++ make
-sudo apt install build-essential libgl1-mesa-dev
-
-下载QT6在线安装个安装程序
-chmod +x qt-online-installer-linux-x64-4.8.0.run
-./qt-online-installer-linux-x64-4.8.0.run
-
-## 添加Qt环境变量
-
-sudo nano /etc/profile 
-
-第二步：在末尾添加qtcreator和qmake路径，其中“/opt/Qt5.12.8/”是我的Qt安装路径，请以Qt的实际安装路径为准。
-
-export PATH="~/Qt/Tools/QtCreator/bin:$PATH"
-export PATH="~/Qt/6.7.2/gcc_64:$PATH"
-
-include path for vscode
-"~/Qt/6.7.2/gcc_64/include/*"
-
-
 ## Q&A
+
+Q: /usr/bin/ld: libqt_ui.so: undefined reference to `ros::shutdown()'
+
+A: 添加ROS链接库即可
+
 
 Q: Failed to find required Qt component "Widgets".
 
