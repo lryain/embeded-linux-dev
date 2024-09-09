@@ -11,6 +11,11 @@ CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
 
+# build
+l0*/bin
+l0*/build
+l0*/lib
+l0*/logs
 l0*/src/*/build
 l0*/src/*/logs
 
