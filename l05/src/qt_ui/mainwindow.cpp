@@ -20,6 +20,8 @@ MainWindow::~MainWindow()
 void MainWindow::slot_btn_send(){
     QString send_msg = ui_->lineEdit_input->text();
     qDebug() << ui_->lineEdit_input->text();
+    // 清空输入文本框
+    ui_->lineEdit_input->clear();
     emit signal_send(send_msg);
 }
 
