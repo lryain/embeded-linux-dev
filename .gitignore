@@ -12,13 +12,13 @@ _deps
 CMakeUserPresets.json
 
 # build
-l0*/bin
-l0*/build
-l0*/install
-l0*/lib
-l0*/logs
-l0*/src/*/build
-l0*/src/*/logs
+*/bin
+*/build
+*/install
+*/lib
+*/logs
+*/src/*/build
+*/src/*/logs
 
 # C++ objects and libs
 *.slo
