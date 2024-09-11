@@ -3,14 +3,15 @@
 
 ## qt依赖
 
+下载QT5在线安装个安装程序
+https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-online-installer-linux-x64-4.8.0.run
+chmod +x qt-online-installer-linux-x64-4.8.0.run
+./qt-online-installer-linux-x64-4.8.0.run
+
 sudo apt update
 sudo apt install libxcb-cursor0
 sudo apt install gcc g++ make
 sudo apt install build-essential libgl1-mesa-dev
-
-下载QT6在线安装个安装程序
-chmod +x qt-online-installer-linux-x64-4.8.0.run
-./qt-online-installer-linux-x64-4.8.0.run
 
 ## 添加Qt环境变量
 

@@ -1,6 +1,7 @@
 # ros1
 
 ros1安装
+wget http://fishros.com/install -O fishros && . fishros
 
 正在准备配置用户目录:/home/lryain/.bashrc
 当前系统包含1个ROS,已为您完成启动终端自动激活ROS环境,修改/home/lryain/.bashrc可关闭

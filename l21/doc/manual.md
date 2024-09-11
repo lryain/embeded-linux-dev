@@ -18,8 +18,7 @@ git config --global user.email "47129927@qq.com"
 ## ENV
 
 change language to chinese
-
-
+安装qt5
 
 ## ros 测试
 
