@@ -18,12 +18,17 @@ git config --global user.email "47129927@qq.com"
 ## ENV
 
 change language to chinese
-安装vscode
+
+安装vscode并**配置proxy**
+
 安装[ros1](/doc/ros1.md)
+
 安装[qt5](/doc/qt.md)
+
 安装[glog](/doc/glog.md)
 
 sudo apt install cutecom
+
 找一个USB转串口设备插上电脑 FT232 CH340
 sudo chmod 777 /dev/ttyUSB0
 
