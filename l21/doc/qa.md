@@ -1,6 +1,4 @@
-
-
-## Q&A
+# Q&A
 
 Q: /usr/bin/ld: libqt_ui.so: undefined reference to `ros::shutdown()'
 
@@ -62,3 +60,19 @@ ament_target_dependencies(${PROJECT_NAME} rclcpp std_msgs)
 定义 void RosNode::run() 方法即可！
 
 ## Ros1 向 Ros2 迁徙
+
+报错：
+Q:/usr/bin/ld: 找不到 -lcommon
+A:
+# 指定common库的路径，然后根据这个路径定义一个链接库 给目标链接时使用
+find_library(MY_COMMON_LIBRARY NAMES common PATHS /home/lryain/dev/embeded-linux-dev/l07/src/common/build)
+link_directories(${MY_COMMON_LIBRARY})
+
+target_link_libraries(${PROJECT_NAME} Qt5::Widgets ${catkin_LIBRARIES} ${MY_COMMON_LIBRARY})
+
+Q：
+# Header files 由于qt工程的特殊性，这个还是要加上 才能找到ui_mainwindow.h头文件 否则报错：fatal error: ./ui_mainwindow.h: 没有那个文件或目录
+A：
+加上
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
