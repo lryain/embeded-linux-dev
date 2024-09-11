@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "l10"
+			"path": "."
 		},
 		{
-			"path": "."
+			"path": "l20"
 		}
 	],
 	"settings": {
