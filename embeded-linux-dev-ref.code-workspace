@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "l20"
+			"path": "l21"
 		}
 	],
 	"settings": {
@@ -18,7 +18,10 @@
 			"numeric": "cpp",
 			"ostream": "cpp",
 			"sstream": "cpp",
-			"set": "cpp"
+			"set": "cpp",
+			"qobject": "cpp",
+			"qserialportinfo": "cpp",
+			"qserialport": "cpp"
 		}
 	}
 }
