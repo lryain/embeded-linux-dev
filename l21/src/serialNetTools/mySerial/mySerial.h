@@ -5,6 +5,7 @@
 #include <QVariantMap>
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
+#include "myLog.h"
 
 using namespace std;
 

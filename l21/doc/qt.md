@@ -10,8 +10,8 @@ chmod +x qt-online-installer-linux-x64-4.8.0.run
 
 sudo apt update
 sudo apt install libxcb-cursor0
-sudo apt install gcc g++ make
-sudo apt install build-essential libgl1-mesa-dev
+<!-- sudo apt install gcc g++ make -->
+<!-- sudo apt install build-essential libgl1-mesa-dev -->
 
 ## 添加Qt环境变量
 

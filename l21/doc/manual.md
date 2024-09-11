@@ -18,7 +18,24 @@ git config --global user.email "47129927@qq.com"
 ## ENV
 
 change language to chinese
-安装qt5
+安装vscode
+安装[ros1](/doc/ros1.md)
+安装[qt5](/doc/qt.md)
+安装[glog](/doc/glog.md)
+
+sudo apt install cutecom
+找一个USB转串口设备插上电脑 FT232 CH340
+sudo chmod 777 /dev/ttyUSB0
+
+virtualbox 的ubuntu 上使用cutecom 关闭串口会死机
+换 vmware station pro就可以了
+
+vmware station 的ubuntu会找不到ttyUSB0
+sudo dmesg | grep brltty
+需要卸载掉
+sudo apt remove brltty
+然后重新插拔以下USB设备
+ls /dev/ttyUSB0
 
 ## ros 测试
 

@@ -87,7 +87,7 @@ install(
 )
 
 # 头文件
-install(FILES mainwindow.h rosNode.h ../common/myLog.h ../common/common.h
+install(FILES mainwindow.h ../common/myLog.h ../common/common.h
         DESTINATION ${MY_CMAKE_INSTALL_DIRECTORY}/include)
 
 # 导出安装集，这样其他项目就可以使用find_package来找到my_library

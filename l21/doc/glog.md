@@ -1,12 +1,12 @@
 # 安装glog
 
-git clone --depth=1 https://github.com/google/glog
-
 ```s
+cd dev
+git clone --depth=1 https://github.com/google/glog
 cd glog
 mkdir build && cd build
 cmake ..
-make
+make -j8
 sudo make install
 sudo ldconfig`
 ```
@@ -16,11 +16,11 @@ sudo ldconfig`
 CMake 3.22 or higher is required.  You are running version 3.16.3
 
 A:
-sudo wget -E https.proxy=192.168.3.8:7890 https://cmake.org/files/v3.23/cmake-3.23.0.tar.gz
+sudo wget -E https.proxy=http://192.168.3.8:7890 https://cmake.org/files/v3.23/cmake-3.23.0.tar.gz
 sudo tar -zxvf cmake-3.23.0.tar.gz
 cd cmake-3.23.0
-./configurre
-sudo make
+sudo ./configurre
+sudo make -j8
 sudo make install
 
 #include <glog/logging.h>
