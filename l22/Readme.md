@@ -7,3 +7,5 @@ mySerial
 
 
 接下来在VMware上重新安装环境
+
+重构MySerial

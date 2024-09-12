@@ -23,11 +23,11 @@ private:
     QSerialPort *serialPort_ = nullptr;
 
 public:
-    MySerial(const string& groupID, const string& serialName, const int& baudReate, const int& checkData, const int& dataBit, const int& stopBit);
+    MySerial();
     ~MySerial();
-    bool start();
-    void stop();
-    // void init(const string& groupID, const string& serialName, const int& baudReate, const int& checkData, const int& dataBit, const int& stopBit);
+    Q_INVOKABLE bool start();
+    Q_INVOKABLE void stop();
+    void init(const string& groupID, const string& serialName, const int& baudReate, const int& checkData, const int& dataBit, const int& stopBit);
 
 public slots:
     void slot_read();
@@ -36,6 +36,7 @@ public slots:
 
 signals:
     void signal_serial(const QVariantMap& msg);
+    void signal_openStatus(const QVariantMap& msg);
 
 };
 
