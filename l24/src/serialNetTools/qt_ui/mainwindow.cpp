@@ -16,6 +16,7 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
     QObject::connect(ui_->pushButton_serial_send, &QPushButton::clicked, this, &MainWindow::slot_btn_mySerial_send);
 
     // 获取串口列表
+    ui_->comboBox_serialName->clear();
     QList<QSerialPortInfo> serialNams = QSerialPortInfo::availablePorts();
     foreach(const QSerialPortInfo &info, serialNams)
     {
@@ -95,13 +96,21 @@ void MainWindow::slot_btn_mySerial_open(){
         data["switch"] = true;
         ui_->pushButton_serial_open->setText("关闭");
         ui_->pushButton_serial_open->setStyleSheet("background-color: green");
+        // ui_->pushButton_serial_open->setEnabled(false);
     }else{
         data["switch"] = false;
         ui_->pushButton_serial_open->setText("打开");
         ui_->pushButton_serial_open->setStyleSheet("background-color: {}");
     }
-    // ui_->pushButton_serial_open->setEnabled(false);
     emit signal_switch(data);
+
+    // 获取串口列表
+    ui_->comboBox_serialName->clear();
+    QList<QSerialPortInfo> serialNams = QSerialPortInfo::availablePorts();
+    foreach(const QSerialPortInfo &info, serialNams)
+    {
+        ui_->comboBox_serialName->addItem("/dev/"+info.portName());
+    }
 }
 
 // 时间戳函数
@@ -152,6 +161,7 @@ void MainWindow::slot_mod_status(const QVariantMap& msg){
 
 /**
  * UI 汇总显示 接收
+ * 显示到文本框
  */
 void MainWindow::slot_send_textEdit(const QVariantMap& msg){
     if(!msg.contains("type")&&!msg.contains("state"))

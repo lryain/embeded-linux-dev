@@ -7,6 +7,10 @@ mySerial
 
 serialNetTools完善
 
+编码原则
+
+高内聚，低耦合
+
 目前有一个bug：
 原因：add_subdirectory(test) 中的QtUi库需要 sudo make install 后才能找到
 # 查找QtUi库

@@ -10,7 +10,6 @@ int main(int argc, char** argv)
     Common common;
     string log_path = common.get_log_path();
     MyLog *myLog = new MyLog(log_path, "serialNetTools");
-
     LOG(INFO)<<"serialNetTools test start.";
 
     // MySerial 是一个QObject对象
