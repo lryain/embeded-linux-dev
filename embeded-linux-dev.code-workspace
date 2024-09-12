@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "l22"
+			"path": "l23"
 		}
 	],
 	"settings": {
@@ -72,7 +72,13 @@
 			"typeindex": "cpp",
 			"typeinfo": "cpp",
 			"variant": "cpp",
-			"bit": "cpp"
+			"bit": "cpp",
+			"qdatetime": "cpp",
+			"qserialport": "cpp",
+			"qmainwindow": "cpp",
+			"qstring": "cpp",
+			"qcoreapplication": "cpp",
+			"qhash": "cpp"
 		}
 	}
 }

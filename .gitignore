@@ -1,3 +1,5 @@
+*.code-workspace
+
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -74,4 +76,3 @@ compile_commands.json
 *creator.user*
 
 *_qmlcache.qrc
-*.code-workspace
